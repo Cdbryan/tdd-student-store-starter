@@ -6,6 +6,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
+import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function App() {
   const [products, setProducts] = React.useState([]);
@@ -14,39 +15,29 @@ export default function App() {
   const [isOpen, setisOpen] = React.useState(false); //represents whether or not the Sidebar is open or closed state.
   const [shoppingCart, setshoppingCart] = React.useState([]); //array
 
-  // handleAddItemToCart(){
-  //   console.log("hi")
+  function handleAddItemToCart(){
+    console.log("handleAddItemToCart")
+  }
 
-  // }
-
-  // handleRemoveItemToCart(){
-
-  // }
+  function handleRemoveItemToCart(){
+    console.log("handleRemoveItemToCart")
+  }
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          <Navbar />
-          <Sidebar />
-        <form id="searchbar">
-          <div id="Navbar">
-            <input
-              type="text"
-              id="search-input"
-              name="searchterm"
-              placeholder="search"
-            />
-            <button id="submit">search</button>
-          </div>
-          <br></br>
-        </form>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={
+            <Home 
+            products={products}
+            handleAddItemToCart={handleAddItemToCart} 
+            handleRemoveItemToCart={handleRemoveItemToCart}
+            />} />
+            
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <Home />
         </main>
       </BrowserRouter>
     </div>

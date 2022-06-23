@@ -6,9 +6,7 @@ import "./ProductGrid.css"
 export default function ProductGrid({Products, handleAddItemToCart, handleRemoveItemToCart}) {
   return (
     <div className="ProductGrid" >
-
-
-
+      {/* Products.map((item) => <ProductCard showDescription="false"/>) */}
     </div> 
 
 
