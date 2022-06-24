@@ -5,7 +5,7 @@ export default function Sidebar() {
   return (
     <section className="sidebar">
       <p>Sidebar</p>
-      <button classname="toggle-button" />
+      <button className="toggle-button" />
     </section>
   )
 }

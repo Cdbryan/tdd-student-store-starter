@@ -1,0 +1,10 @@
+.ProductCard img{
+    box-shadow: .2px 4px 5px rgba(0,0,0,1);
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    width: 150px;
+    height: 200px;
+    border: 2px solid white;
+}
+

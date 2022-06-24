@@ -3,9 +3,26 @@ import "./Home.css"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import ProductGrid from "../ProductGrid/ProductGrid"
+import axios from 'axios';
 
 
-export default function Home({products, handleRemoveItemToCart, handleAddItemToCart}) {
+export default function Home({products, handleRemoveItemToCart, handleAddItemToCart, setProducts}) {
+  
+  React.useEffect(() => {
+    function getData() {
+      axios
+        .get(`https://codepath-store-api.herokuapp.com/store/`)
+        .then((productData) => {
+          let items = productData.data.products;
+          setProducts(items)
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    getData();
+  }, []);
+
   return (
     <div className="home">
       <Navbar />
@@ -20,7 +37,6 @@ export default function Home({products, handleRemoveItemToCart, handleAddItemToC
             />
             <button id="submit">search</button>
           </div>
-          <br></br>
         </form>
       <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart}  handleRemoveItemToCart={handleRemoveItemToCart} />
     </div>

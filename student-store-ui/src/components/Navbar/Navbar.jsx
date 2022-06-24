@@ -5,9 +5,9 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div class="navcontent">
-        <Logo class="logo" />
-        <ul class="links">
+      <div className="navcontent">
+        <Logo className="logo" />
+        <ul className="links">
           <li>
             <a href="/">Home</a>
           </li>
@@ -21,7 +21,7 @@ export default function Navbar() {
             <a href="/#Buy">Buy Now</a>
           </li>
         </ul>
-        <div class="socials"></div>
+        <div className="socials"></div>
       </div>
     </nav>
   );
