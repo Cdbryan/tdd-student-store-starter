@@ -4,17 +4,20 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+// Gif Walkthrough 
+
+Hompage Layout, API, and Home Link
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/77913247/175751083-d79592e9-fd12-4e8c-8e7f-6f0b6903e1ce.gif)
 
 ### Application Features
 
 #### Core Features
 
 - [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [x] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
@@ -285,15 +288,15 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+This week’s twitter lab allowed me to build the skills necessary to pass down props from a parent component down to multiple child components. However, I struggled with the styling of the student store. Getting the CSS to match the format of the example proved to be more difficult than expected and I feel that I may need to take some time to review CSS to prevent writing unnecessary code. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would implement more of the animation features that the student store example displays such as the slide-out sidebar and the category display below the searchbar. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+The demo went well but since this particular project is quite lengthy I was not able to demo all of the features I am currently working on implementing. However, I noticed that some of my peers added a search feature that begins searching through items as the user is typing which is something I would also like to implement later on. 
 
 ### Open-source libraries used
 
@@ -301,4 +304,4 @@ Add your response here
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shoutout to Yasmin for helping me with my API call!
