@@ -7,6 +7,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 // Gif Walkthrough 
 
 Hompage Layout, API, and Home Link
+
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/77913247/175751083-d79592e9-fd12-4e8c-8e7f-6f0b6903e1ce.gif)
 
 ### Application Features
