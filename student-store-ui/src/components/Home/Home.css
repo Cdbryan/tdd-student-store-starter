@@ -74,3 +74,15 @@
   width: 170px;
   height: 40px;
 }
+
+.cart a{
+  margin-left: 40px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.cart .material-icons{
+  margin-left: 10px;
+  margin-top: 5px;
+}
