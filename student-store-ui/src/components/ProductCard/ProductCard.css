@@ -47,3 +47,13 @@
   background-color: white;
 }
 
+.counter{
+  margin-left: 115px;
+  background-color: orange;
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+

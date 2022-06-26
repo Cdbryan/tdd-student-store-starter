@@ -3,7 +3,19 @@ import Logo from "../Logo/Logo";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ product, productID, showDescription, handleAddItemToCart, handleRemoveItemFromCart }) {
+export default function ProductCard({ product, productID, showDescription}) {
+  
+  const[count, setcount] = React.useState(0)
+
+  function handleAddItemToCart()
+  {
+    setcount(count + 1)
+  }
+  function handleRemoveItemFromCart()
+  {
+    setcount(count - 1)
+  }
+
   return (
     <div className="productCard">
       <Link to={`/products/${productID}`} className="media">
@@ -13,18 +25,15 @@ export default function ProductCard({ product, productID, showDescription, handl
         <h1 className="productName"> {product.name} </h1>
         <h1 className="price"> ${product.price} </h1>
         <span className="span">
-          <button className="add" onClick={handleAddItemToCart(productID)}> 
+          <button className="add" onClick={handleAddItemToCart}> 
             <i class="material-icons">add</i>
           </button>
-          <button className="remove" onClick={handleRemoveItemFromCart(productID)}> 
+          <button className="remove" onClick={handleRemoveItemFromCart}> 
             <i class="material-icons">remove</i>
           </button>
+          <div className="counter"> {count} </div>
         </span>
       </div>
-      {/* if(showDescription)
-        {
-            // <h1 className="description"> ${product.description} </h1>
-        } */}
     </div>
   );
 }
