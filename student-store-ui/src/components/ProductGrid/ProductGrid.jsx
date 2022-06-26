@@ -3,13 +3,36 @@ import Logo from "../Logo/Logo";
 import "./ProductGrid.css";
 import ProductCard from "../ProductCard/ProductCard";
 
-export default function ProductGrid({products, handleAddItemToCart,handleRemoveItemToCart}) {
-  console.log("products")
-  console.log(products)
+export default function ProductGrid({
+  searchTerm,
+  products,
+  handleAddItemToCart,
+  handleRemoveItemToCart,
+}) {
+  console.log("products");
+  console.log(products);
   return (
     <div className="ProductGrid">
-      {products.map((item, i) => {return (
-        <ProductCard key={i} product={item} productID={i} showDescription="false"  />
-      )})}
-  </div>
-  )}
+      {
+        products.filter((product) => {
+          if (searchTerm == "") {
+            return product;
+          } else if (
+            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return product;
+          }
+        })
+        .map((item, i) => {
+          return (
+            <ProductCard
+              key={i}
+              product={item}
+              productID={i}
+              showDescription="false"
+            />
+          );
+        })}
+    </div>
+  );
+}

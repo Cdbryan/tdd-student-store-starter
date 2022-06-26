@@ -16,7 +16,7 @@ export default function Home({products, handleRemoveItemToCart, handleAddItemToC
         .get(`https://codepath-store-api.herokuapp.com/store/`)
         .then((productData) => {
           let items = productData.data.products;
-          setProducts(items)
+          setProducts(items) //products array has all of the items in it 
         })
         .catch((err) => {
           console.log(err);
@@ -24,6 +24,10 @@ export default function Home({products, handleRemoveItemToCart, handleAddItemToC
     }
     getData();
   }, []);
+
+  
+  // products.filter((product) => product.includes({search-input}))
+  const [searchTerm, setSearchTerm] = React.useState('')
 
   return (
     <div className="home">
@@ -38,6 +42,7 @@ export default function Home({products, handleRemoveItemToCart, handleAddItemToC
               id="search-input"
               name="searchterm"
               placeholder="search"
+              onChange={(event) => {setSearchTerm(event.target.value)}}
             />
             <button id="submit">search</button>
             <span className="help"><i className="material-icons">help</i>Help</span>
@@ -47,7 +52,7 @@ export default function Home({products, handleRemoveItemToCart, handleAddItemToC
           </div>
         </form>
       </div>
-      <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart}  handleRemoveItemToCart={handleRemoveItemToCart} />
+      <ProductGrid searchTerm={searchTerm} products={products} handleAddItemToCart={handleAddItemToCart}  handleRemoveItemToCart={handleRemoveItemToCart} />
     </div>
   )
 }
