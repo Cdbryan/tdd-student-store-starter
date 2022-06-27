@@ -26,10 +26,10 @@ export default function ProductCard({ product, productID, showDescription}) {
         <h1 className="price"> ${product.price} </h1>
         <span className="span">
           <button className="add" onClick={handleAddItemToCart}> 
-            <i class="material-icons">add</i>
+            <i className="material-icons">add</i>
           </button>
           <button className="remove" onClick={handleRemoveItemFromCart}> 
-            <i class="material-icons">remove</i>
+            <i className="material-icons">remove</i>
           </button>
           <div className="counter"> {count} </div>
         </span>

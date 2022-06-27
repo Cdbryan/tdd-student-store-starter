@@ -23,6 +23,17 @@ export default function App() {
     console.log("handleRemoveItemToCart");
   }
 
+  function handleOnToggle(){
+    if(isOpen){
+      setisOpen(false)
+    }
+    else if(isOpen == false){
+      setisOpen(true)
+    }
+  }
+
+  //handle on toggle sets is open to opposite feature
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -36,6 +47,8 @@ export default function App() {
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemToCart={handleRemoveItemToCart}
                   setProducts={setProducts}
+                  isOpen={isOpen}
+                  handleOnToggle={handleOnToggle}
                 />
               }
             />

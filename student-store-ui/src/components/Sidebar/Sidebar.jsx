@@ -1,11 +1,13 @@
-import * as React from "react"
-import "./Sidebar.css"
+import * as React from "react";
+import "./Sidebar.css";
 
-export default function Sidebar() {
+export default function Sidebar({isOpen, handleOnToggle = () => {}}) {
+
   return (
-    <section className="sidebar">
-      <p>Sidebar</p>
-      <button className="toggle-button" />
+    <section className={isOpen ? "sidebar" : "closed"}> 
+      <button className="toggle" onClick={handleOnToggle}>
+      <i className="material-icons md-48">arrow_forward</i>
+      </button>
     </section>
-  )
+  );
 }

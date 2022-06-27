@@ -13,8 +13,8 @@ export default function ProductGrid({
   console.log(products);
   return (
     <div className="ProductGrid">
-      {
-        products.filter((product) => {
+      {products
+        .filter((product) => {
           if (searchTerm == "") {
             return product;
           } else if (
