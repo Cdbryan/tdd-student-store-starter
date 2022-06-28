@@ -6,6 +6,7 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import Hero from "../Hero/Hero";
 import axios from "axios";
 import About from "../About/About";
+import Contact from "../Contact/Contact";
 
 export default function Home({
   products,
@@ -107,6 +108,7 @@ export default function Home({
       />
       <br></br>
       <About />
+      <Contact />
     </div>
 
   );
