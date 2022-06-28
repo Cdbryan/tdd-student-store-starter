@@ -4,7 +4,7 @@ import "./About.css"
 export default function About(){
     
     return(
-        <div className="About" >
+        <div className="About" id="About">
             <div className="aboutText">
                 <h1> About Us</h1>
                 <p> The codepath student store offers great products at great prices from a great team and for a great cause. </p>
