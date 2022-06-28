@@ -9,8 +9,6 @@ export default function ProductGrid({
   handleAddItemToCart,
   handleRemoveItemToCart,
 }) {
-  console.log("products");
-  console.log(products);
   return (
     <div className="ProductGrid">
       {products

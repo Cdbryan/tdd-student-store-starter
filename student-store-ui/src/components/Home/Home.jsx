@@ -6,6 +6,8 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import Hero from "../Hero/Hero";
 import axios from "axios";
 
+
+
 export default function Home({
   products,
   handleRemoveItemToCart,
@@ -14,6 +16,8 @@ export default function Home({
   isOpen,
   handleOnToggle,
 }) {
+
+  const[productsCopy, setproductsCopy] = React.useState(products)
   React.useEffect(() => {
     function getData() {
       axios
@@ -21,6 +25,7 @@ export default function Home({
         .then((productData) => {
           let items = productData.data.products;
           setProducts(items); //products array has all of the items in it
+          setproductsCopy(items)
         })
         .catch((err) => {
           console.log(err);
@@ -28,6 +33,22 @@ export default function Home({
     }
     getData();
   }, []);
+
+
+
+  
+  function categorySearch(category){
+    console.log("unfiltered products", products)
+    console.log("category is" , category)
+    if(category == "All Categories")
+    {
+      return setProducts(productsCopy); 
+    }
+   setProducts(productsCopy.filter((product) => {
+      return product.category == category
+    }))
+    console.log("filtered products", products)
+  }
 
   // products.filter((product) => product.includes({search-input}))
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -62,19 +83,19 @@ export default function Home({
         </form>
         <ul className="category-menu">
           <li className="">
-            <button>All Categories</button>
+            <button onClick={() => categorySearch("All Categories")}>All Categories</button>
           </li>
           <li className="">
-            <button>Clothing</button>
+            <button onClick={() => categorySearch("clothing")}>Clothing</button>
           </li>
           <li className="">
-            <button>Food</button>
+            <button onClick={() => categorySearch("food")}>Food</button>
           </li>
           <li className="">
-            <button>Accessories</button>
+            <button onClick={() => categorySearch("accessories")}>Accessories</button>
           </li>
           <li className="">
-            <button>Tech</button>
+            <button onClick={() => categorySearch("tech")}>Tech</button>
           </li>
         </ul>
       </div>
