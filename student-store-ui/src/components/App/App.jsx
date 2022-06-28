@@ -57,8 +57,7 @@ export default function App() {
               path="/products/:productId"
               element={
                 <ProductDetail
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemToCart={handleRemoveItemToCart}
+                  products={products}
                 />
               }
             />
