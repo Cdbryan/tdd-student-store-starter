@@ -20,9 +20,10 @@ export default function Home({
   React.useEffect(() => {
     function getData() {
       axios
-        .get(`https://codepath-store-api.herokuapp.com/store/`)
+        .get(`http://localhost:3001/store`)
         .then((productData) => {
-          let items = productData.data.products;
+          console.log(productData)
+          let items = productData.data;
           setProducts(items); //products array has all of the items in it
           setproductsCopy(items);
         })

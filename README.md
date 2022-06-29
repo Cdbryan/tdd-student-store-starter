@@ -8,6 +8,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 Search 
 
+
 ![S Search](https://user-images.githubusercontent.com/77913247/176324343-8270d22d-c00f-4887-aa47-557f49c16ee8.gif)
 
 
