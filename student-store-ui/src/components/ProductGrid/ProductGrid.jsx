@@ -8,6 +8,8 @@ export default function ProductGrid({
   products,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  setShoppingCart,
+  shoppingCart
 }) {
   return (
     <div className="ProductGrid">
@@ -28,6 +30,8 @@ export default function ProductGrid({
               product={item}
               productID={i}
               showDescription="false"
+              setShoppingCart={setShoppingCart}
+              shoppingCart={shoppingCart}
             />
           );
         })}

@@ -15,6 +15,8 @@ export default function Home({
   setProducts,
   isOpen,
   handleOnToggle,
+  setShoppingCart,
+  shoppingCart
 }) {
   const [productsCopy, setproductsCopy] = React.useState(products);
   React.useEffect(() => {
@@ -106,6 +108,9 @@ export default function Home({
         products={products}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}
+        setShoppingCart={setShoppingCart}
+        shoppingCart={shoppingCart}
+
       />
       <br></br>
       <About />

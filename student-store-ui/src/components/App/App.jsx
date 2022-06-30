@@ -13,7 +13,7 @@ export default function App() {
   const [isFetching, setisFetching] = React.useState(false);
   const [error, setError] = React.useState("");
   const [isOpen, setisOpen] = React.useState(false); //represents whether or not the Sidebar is open or closed state.
-  const [shoppingCart, setshoppingCart] = React.useState([]); //array
+  const [shoppingCart, setShoppingCart] = React.useState([]); //array
 
   function handleAddItemToCart() {
     console.log("handleAddItemToCart");
@@ -49,6 +49,8 @@ export default function App() {
                   setProducts={setProducts}
                   isOpen={isOpen}
                   handleOnToggle={handleOnToggle}
+                  setShoppingCart={setShoppingCart}
+                  shoppingCart={shoppingCart}
                 />
               }
             />
