@@ -12,11 +12,51 @@ export default function ProductCard({
   shoppingCart
 }) {
   const [count, setcount] = React.useState(0);
+ 
 
-  function handleAddItemToCart() {
+  function handleAddItemToCart(product) {
     setcount(count + 1);
-    setShoppingCart([...shoppingCart, product]); //need to figure out how to pass the item ot the shopping cart
-    console.log("shopping cart add" , shoppingCart)
+    console.log("product that was added" , product)
+    //check shopping cart to see if product exists if so then just update quantity if not make new object with quantity one 
+    if(shoppingCart.length == 0)
+    {
+      setShoppingCart([{"product": product, "quantity": 1}])
+    }
+    else{
+      var foundMatch = false 
+      let newState = shoppingCart.map( item => { 
+        if(item.product.id == product.id)
+        {
+          foundMatch = true
+          let itemQuant = item.quantity + 1 
+          console.log("updating: ", item )
+          return {...item, quantity: itemQuant}
+        }
+        return item
+      })
+      if(foundMatch == false)
+      {
+        
+        newState.push({"product": product, "quantity": 1})
+        console.log("val of newstate", newState)
+      }
+
+      setShoppingCart(newState)
+      console.log("updated shopping cart" , shoppingCart)
+    }
+
+    // if(shoppingCart.find(element => element.id == product.id) == null)
+    // {
+    //   let quantity = 1
+    //   setShoppingCart([...shoppingCart, {"product": product, "quantity": quantity}]);
+    // }
+    // else //product exists in array 
+    // {
+    //   let item = shoppingCart.find(element => element.id == product.id)
+    //   item.quantity += 1
+    //   setShoppingCart([...shoppingCart, quantit])
+    // }
+    // {console.log("updated shopping cart" , shoppingCart)}
   }
   function handleRemoveItemFromCart() {
     if(count > 0)
@@ -36,7 +76,7 @@ export default function ProductCard({
         <h1 className="productName"> {product.name} </h1>
         <h1 className="price"> ${product.price} </h1>
         <span className="span">
-          <button className="add" onClick={handleAddItemToCart}>
+          <button className="add" onClick={() => handleAddItemToCart(product)}>
             <i className="material-icons">add</i>
           </button>
           <button className="remove" onClick={handleRemoveItemFromCart}>

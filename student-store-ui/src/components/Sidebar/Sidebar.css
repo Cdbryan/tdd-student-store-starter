@@ -4,9 +4,10 @@
     width: 75px;     /* Set the width of the sidebar */
     z-index: 1;      /* Stay on top of everything */
     top: 0;      /* Stay at the top */
-    background-color: #222; /* Black */
+    background-color: #2c4047; /* Black */
     overflow-x: hidden;     /* Disable horizontal scroll */
     padding-top: 10px;
+    border-right: 2px solid white;
 }
 
 .sidebar{
@@ -15,7 +16,11 @@
     width: 500px;     /* Set the width of the sidebar */
     z-index: 1;      /* Stay on top of everything */
     top: 0;      /* Stay at the top */
-    background-color: #222; /* Black */
+    background-color: #2c4047; /* Black */
     overflow-x: hidden;     /* Disable horizontal scroll */
     padding-top: 10px;
+}
+
+.nothing{
+    visibility: hidden;
 }

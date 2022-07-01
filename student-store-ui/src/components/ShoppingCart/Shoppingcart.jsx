@@ -1,17 +1,71 @@
 import * as React from "react";
-import "./Shoppingcart.css";
+import "./ShoppingCart.css";
 
-export default function Shoppingcart({ isOpen, products, shoppingCart }) {
+export default function ShoppingCart({ shoppingCart }) {
+  var subtotal = 0;
+  var tax = 0.08;
+  var total = 0;
+  var totprodprice = 0; 
+
+  //maybe use .find in shopping cart array to check if product already exists if so then just adjust the
+  //quantity of that product not everything
+  console.log("Look at this Shopping Cart", shoppingCart);
+
+  function updatePrices(product){
+    subtotal += product.product.price; 
+    tax += product.product.price * .08
+    total = subtotal + tax
+    totprodprice = product.quantity * product.product.price
+  
+  }
+
   return (
-    <div className="Shoppingcart">
-      {shoppingcart.map((cartItem) => {
-        return (
-            <div className="cartProductInfo">
-                <h1 className="cart-product-name"> {products[cartItem.productID].name} </h1>
-                <h1 className="cart-product-quantity"></h1>
-            </div>
-        );
-      })}
+    <div className="shopping-cart">
+      <div className="CartTable">
+        <div className="header">
+          <div className="header-row">
+            <span className="flex-2">Name</span>
+            <span className="center">Quantity</span>
+            <span className="center">Unit Price</span>
+            <span className="center">Cost</span>
+          </div>
+
+          {shoppingCart.map((product) => {
+             
+              updatePrices(product) 
+              return (
+                <div className="product-row">
+                  <span className="flex-2 cart-product-name">{product.product.name}</span>
+                  <span className="center cart-product-quantity">{product.quantity}</span>
+                  <span className="center cart-product-price">{product.product.price}</span>
+                  <span className="center cart-product-subtotal">{totprodprice.toFixed(2)}</span>
+                </div>
+              );
+        
+          })}
+        </div>
+        <div className="receipt">
+          <div className="receipt-subtotal">
+            <span className="label">Subtotal</span>
+            <span></span>
+            <span></span>
+            <span className="center subtotal">{subtotal.toFixed(2)}</span>
+          </div>
+          <div className="receipt-taxes">
+            <span className="label">Taxes and Fees</span>
+            <span></span>
+            <span></span>
+            <span className="center">{tax.toFixed(2)}</span>
+          </div>
+          <div className="receipt-total">
+            <span className="label">Total</span>
+            <span></span>
+            <span></span>
+           
+            <span className="center total-price"> {total.toFixed(2)}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

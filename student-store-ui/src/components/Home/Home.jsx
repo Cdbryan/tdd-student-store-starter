@@ -16,7 +16,7 @@ export default function Home({
   isOpen,
   handleOnToggle,
   setShoppingCart,
-  shoppingCart
+  shoppingCart,
 }) {
   const [productsCopy, setproductsCopy] = React.useState(products);
   React.useEffect(() => {
@@ -24,7 +24,7 @@ export default function Home({
       axios
         .get(`http://localhost:3001/store`)
         .then((productData) => {
-          console.log(productData)
+          console.log(productData);
           let items = productData.data;
           setProducts(items); //products array has all of the items in it
           setproductsCopy(items);
@@ -56,7 +56,7 @@ export default function Home({
   return (
     <div className="home">
       <Navbar />
-      <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} />
+      <Sidebar shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle} />
       <Hero />
       <div className="subNav">
         <form id="searchbar">
@@ -110,12 +110,10 @@ export default function Home({
         handleRemoveItemToCart={handleRemoveItemToCart}
         setShoppingCart={setShoppingCart}
         shoppingCart={shoppingCart}
-
       />
       <br></br>
       <About />
       <Contact />
     </div>
-
   );
 }
