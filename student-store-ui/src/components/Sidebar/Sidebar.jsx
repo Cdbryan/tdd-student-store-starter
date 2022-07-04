@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./Sidebar.css";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import Checkout from "../Checkout/Checkout";
 
 export default function Sidebar({shoppingCart, isOpen, handleOnToggle = () => {}}) {
 
@@ -16,7 +17,11 @@ export default function Sidebar({shoppingCart, isOpen, handleOnToggle = () => {}
       </button>
       {console.log("isOpen: " , isOpen)}
       {
-        isOpen ? <ShoppingCart shoppingCart={shoppingCart}/> : null
+        isOpen ? 
+          <div>
+            <ShoppingCart shoppingCart={shoppingCart}/>
+            <Checkout/>
+          </div> : null
       }
     </section>
   );

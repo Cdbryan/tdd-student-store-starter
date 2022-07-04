@@ -12,12 +12,10 @@ export default function ProductCard({
   shoppingCart
 }) {
   const [count, setcount] = React.useState(0);
- 
 
   function handleAddItemToCart(product) {
     setcount(count + 1);
-    console.log("product that was added" , product)
-    //check shopping cart to see if product exists if so then just update quantity if not make new object with quantity one 
+
     if(shoppingCart.length == 0)
     {
       setShoppingCart([{"product": product, "quantity": 1}])
@@ -29,43 +27,44 @@ export default function ProductCard({
         {
           foundMatch = true
           let itemQuant = item.quantity + 1 
-          console.log("updating: ", item )
           return {...item, quantity: itemQuant}
         }
         return item
       })
       if(foundMatch == false)
       {
-        
         newState.push({"product": product, "quantity": 1})
-        console.log("val of newstate", newState)
       }
-
       setShoppingCart(newState)
-      console.log("updated shopping cart" , shoppingCart)
     }
-
-    // if(shoppingCart.find(element => element.id == product.id) == null)
-    // {
-    //   let quantity = 1
-    //   setShoppingCart([...shoppingCart, {"product": product, "quantity": quantity}]);
-    // }
-    // else //product exists in array 
-    // {
-    //   let item = shoppingCart.find(element => element.id == product.id)
-    //   item.quantity += 1
-    //   setShoppingCart([...shoppingCart, quantit])
-    // }
-    // {console.log("updated shopping cart" , shoppingCart)}
   }
-  function handleRemoveItemFromCart() {
+
+  function handleRemoveItemFromCart(product) {
     if(count > 0)
     {
       setcount(count - 1);
     }
-    setShoppingCart((shoppingCart) => shoppingCart.filter((item) => item != product))
-    console.log("shopping cart remove" , shoppingCart)
+   
+    let newState = shoppingCart.map( item => { 
+      if(item.product.id == product.id)
+      {
+        let itemQuant = item.quantity - 1 
+        console.log("removing: ", item )
+        if(itemQuant == 0)
+        {
+          shoppingCart.filter((item) => {item.id != product.id})
+        }
+        else{
+          return {...item, quantity: itemQuant}
+        }
+      }
+      return item;
+    })
+    setShoppingCart(newState)
   }
+
+  React.useEffect( () => {console.log(shoppingCart)} , [shoppingCart])
+
 
   return (
     <div className="productCard">
@@ -79,7 +78,7 @@ export default function ProductCard({
           <button className="add" onClick={() => handleAddItemToCart(product)}>
             <i className="material-icons">add</i>
           </button>
-          <button className="remove" onClick={handleRemoveItemFromCart}>
+          <button className="remove" onClick={() => handleRemoveItemFromCart(product)}>
             <i className="material-icons">remove</i>
           </button>
           <div className="counter"> {count} </div>

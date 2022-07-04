@@ -2,6 +2,21 @@ import * as React from "react";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart({ shoppingCart }) {
+  
+
+
+  
+  if(shoppingCart.length == 0){
+
+    return (
+    <div>
+      <h1 className="shoppingCartTitle"> Shopping Cart 
+        <span class="shoppingCartbutton"><i class="material-icons md-48">add_shopping_cart</i></span>
+      </h1>
+      <h1 className="emptycart"> No items added to cart yet. Start shopping now! </h1>
+    </div>)
+  }
+
   var subtotal = 0;
   var tax = 0.08;
   var total = 0;
@@ -9,18 +24,23 @@ export default function ShoppingCart({ shoppingCart }) {
 
   //maybe use .find in shopping cart array to check if product already exists if so then just adjust the
   //quantity of that product not everything
+
+
   console.log("Look at this Shopping Cart", shoppingCart);
 
   function updatePrices(product){
+    console.log(product)
     subtotal += product.product.price; 
     tax += product.product.price * .08
     total = subtotal + tax
     totprodprice = product.quantity * product.product.price
-  
   }
 
   return (
     <div className="shopping-cart">
+      <h1 className="shoppingCartTitle"> Shopping Cart 
+        <span class="shoppingCartbutton"><i class="material-icons md-48">add_shopping_cart</i></span>
+      </h1>
       <div className="CartTable">
         <div className="header">
           <div className="header-row">
