@@ -145,5 +145,80 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "user": {
+        "name": "Christian ",
+        "email": "C@b.com"
+      },
+      "shoppingCart": {
+        "order": [
+          {
+            "product": {
+              "id": 1,
+              "name": "Rice Krispies",
+              "category": "food",
+              "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+              "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+              "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+              "price": 0.99
+            },
+            "quantity": 2
+          }
+        ],
+        "total": 1.1492
+      },
+      "time": {
+        "year": 2022,
+        "month": "07",
+        "date": "05",
+        "hours": 16,
+        "minutes": 36,
+        "seconds": 52
+      }
+    },
+    {
+      "user": {
+        "name": "Chloe ",
+        "email": "Chloe@harrison.com"
+      },
+      "shoppingCart": {
+        "order": [
+          {
+            "product": {
+              "id": 4,
+              "name": "Coconut Water",
+              "category": "food",
+              "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coconut_Drink%2C_Pangandaran.JPG/1920px-Coconut_Drink%2C_Pangandaran.JPG",
+              "source": "https://commons.wikimedia.org/wiki/Category:Coconut_water#/media/File:Coconut_Drink,_Pangandaran.JPG",
+              "description": "Somehow incredibly hydrating, while also not really being water.",
+              "price": 3.25
+            },
+            "quantity": 1
+          },
+          {
+            "product": {
+              "id": 5,
+              "name": "Fruit Medley",
+              "category": "food",
+              "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Fruits.png/640px-Fruits.png",
+              "source": "https://commons.wikimedia.org/wiki/File:Fruits.png",
+              "description": "More fruit than you know what to do with!",
+              "price": 7.5
+            },
+            "quantity": 1
+          }
+        ],
+        "total": 11.69
+      },
+      "time": {
+        "year": 2022,
+        "month": "07",
+        "date": "05",
+        "hours": 4,
+        "minutes": 38,
+        "seconds": 24
+      }
+    }
+  ]
 }

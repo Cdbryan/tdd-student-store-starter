@@ -16,7 +16,7 @@ export default function ShoppingCart({ shoppingCart,  }) {
   }
 
   var subtotal = 0;
-  var tax = 0.08;
+  var tax = 0.0875;
   var total = 0;
   var totprodprice = 0; 
 
