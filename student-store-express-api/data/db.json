@@ -145,5 +145,26 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "name": "Christian Bryan",
+      "email": "hi"
+    },
+    {
+      "name": "Christian Bryan",
+      "email": "hi"
+    },
+    {
+      "name": "Christian Bryan",
+      "email": "hi"
+    },
+    {
+      "name": "Christian Bryan",
+      "email": "hi"
+    },
+    {
+      "name": "",
+      "email": ""
+    }
+  ]
 }
