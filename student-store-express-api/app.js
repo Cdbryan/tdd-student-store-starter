@@ -39,9 +39,16 @@ app.post("/store", (req,res) => {
       name: req.body.name,
       email: req.body.email
     } 
-    // var purchases = storage.get("purchases").value()
-    storage.get("purchases").push(user).write()
-    // console.log("purchases array", purchases)
+    const shoppingCart = {
+      order: req.body.order, 
+      total: req.body.total
+    }
+    const time = {
+      
+    }
+    const receipt = {user, shoppingCart}
+    storage.get("purchases").push(receipt).write()
+
     res.status(201).json({user})
   }
   catch(e)
