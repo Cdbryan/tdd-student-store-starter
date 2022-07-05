@@ -1,7 +1,8 @@
 import * as React from "react";
 import "./ShoppingCart.css";
+import Checkout from "../Checkout/Checkout";
 
-export default function ShoppingCart({ shoppingCart }) {
+export default function ShoppingCart({ shoppingCart,  }) {
   
   if(shoppingCart.length == 0){
 
@@ -83,6 +84,8 @@ export default function ShoppingCart({ shoppingCart }) {
           </div>
         </div>
       </div>
+      <Checkout shoppingCart={shoppingCart} total={total} />
     </div>
+  
   );
 }

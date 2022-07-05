@@ -2,7 +2,7 @@ import * as React from "react";
 import "./Checkout.css";
 import axios from "axios";
 
-export default function Checkout() {
+export default function Checkout({shoppingCart, total}) {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   // name - the name attribute of the input being updated
@@ -12,10 +12,11 @@ export default function Checkout() {
   //submits users order to the api
   //uses axios.post method to send a post request to store/endpoint
   
+  console.log("shopping cart before post request", shoppingCart)
   //add use effect?
   function handleOnCheckoutFormChange() {
     axios
-      .post(`http://localhost:3001/store`, { name: name, email: email })
+      .post(`http://localhost:3001/store`, { name: name, email: email, order: shoppingCart , total: total})
       .then((productData) => {
         console.log(productData)})
       .catch((e) => {

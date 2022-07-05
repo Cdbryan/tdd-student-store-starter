@@ -21,7 +21,7 @@ export default function Sidebar({
       {isOpen ? (
         <div>
           <ShoppingCart shoppingCart={shoppingCart} />
-          <Checkout />
+          {/* <Checkout /> */}
         </div>
       ) : (
         <div className="sidebarIcons">
