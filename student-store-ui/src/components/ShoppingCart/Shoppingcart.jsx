@@ -3,15 +3,12 @@ import "./ShoppingCart.css";
 
 export default function ShoppingCart({ shoppingCart }) {
   
-
-
-  
   if(shoppingCart.length == 0){
 
     return (
     <div>
       <h1 className="shoppingCartTitle"> Shopping Cart 
-        <span class="shoppingCartbutton"><i class="material-icons md-48">add_shopping_cart</i></span>
+        <span className="shoppingCartbutton"><i className="material-icons md-48">add_shopping_cart</i></span>
       </h1>
       <h1 className="emptycart"> No items added to cart yet. Start shopping now! </h1>
     </div>)
@@ -39,7 +36,7 @@ export default function ShoppingCart({ shoppingCart }) {
   return (
     <div className="shopping-cart">
       <h1 className="shoppingCartTitle"> Shopping Cart 
-        <span class="shoppingCartbutton"><i class="material-icons md-48">add_shopping_cart</i></span>
+        <span className="shoppingCartbutton"><i className="material-icons md-48">add_shopping_cart</i></span>
       </h1>
       <div className="CartTable">
         <div className="header">

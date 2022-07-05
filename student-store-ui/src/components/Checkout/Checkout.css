@@ -45,3 +45,16 @@
     border: solid 1px white;
     color: #fff;
 }
+
+.checkoutInfo{
+    color:white;
+    text-align: center;
+    font-size: 25px;
+}
+
+.checkoutDes{
+    color:white;
+    width: 90%;
+    text-align: center;
+    margin-left: 18px;
+}
