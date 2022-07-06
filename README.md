@@ -21,6 +21,15 @@ Sidebar
 
 ![S Sidebar](https://user-images.githubusercontent.com/77913247/176324358-fe0bff46-610f-4a8d-87e4-4637be893d24.gif)
 
+Shopping Cart
+
+![shoppingCart](https://user-images.githubusercontent.com/77913247/177436425-18b818ba-6f26-49ca-9eb4-b88fd228bb85.gif)
+
+
+Posting to Database
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/77913247/177436567-5f78f68d-25aa-489f-b200-9556f46883a7.gif)
+
 
 ### Application Features
 
@@ -34,16 +43,16 @@ Sidebar
 - [x] User can click to expand the shopping cart in the left navigation.
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
-- [ ] User can click in the top navigation bar to scroll to the relevant section.
+- [x] User can click in the top navigation bar to scroll to the relevant section.
 - [ ] User sees a "not found" display when searching for a nonexistent product.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
-- [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [x] Allow users to use an input to filter orders by the email of the person who placed the order.
 
 ### Passing Automated Tests
 
