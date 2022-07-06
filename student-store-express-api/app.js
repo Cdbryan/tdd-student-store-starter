@@ -76,7 +76,7 @@ app.post("/store", (req, res) => {
      };
     const receipt = {user, shoppingCart, time};
     storage.get("purchases").push(receipt).write();
-    res.status(201).json({ "purchase": purchase });
+    res.status(201).json({ "purchases": receipt });
   } catch (e) {
     console.log(e);
   }
